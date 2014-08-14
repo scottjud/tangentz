@@ -1,0 +1,29 @@
+<h1>Listing tangents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tangents.each do |tangent| %>
+      <tr>
+        <td><%= tangent.name %></td>
+        <td><%= tangent.description %></td>
+        <td><%= link_to 'Show', tangent %></td>
+        <td><%= link_to 'Edit', edit_tangent_path(tangent) %></td>
+        <td><%= link_to 'Destroy', tangent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tangent', new_tangent_path %>
